@@ -19,8 +19,16 @@ function App() {
         setWeather(data.data)
     }).catch(err => console.log(err, "Sorry something went wrong, try later"));
   },[])
+
   // another state to let the user search the city
   const [input, setInput] = useState('');
+
+  // event
+  const handleInputWeather = (e) => {
+    console.log(e.value);
+    setInput(e.value)
+  }
+
   // here we say, if the weather is present then show it otherwise not, to prevent errors
   return (
     <div>
@@ -28,7 +36,7 @@ function App() {
         <div>
 
           <div className="search">
-            <input type="text"/>
+            <input onChange={handleInputWeather} type="text"/>
             <button>Search</button>
           </div>
 
