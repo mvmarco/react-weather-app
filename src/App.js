@@ -25,8 +25,8 @@ function App() {
 
   // event
   const handleInputWeather = (e) => {
-    console.log(e.value);
-    setInput(e.value)
+    console.log(e.target.value);
+    setInput(e.target.value);
   }
 
   // here we say, if the weather is present then show it otherwise not, to prevent errors
