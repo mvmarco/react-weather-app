@@ -37,6 +37,7 @@ function App() {
    ).then((data) => {
      setWeather(data.data)
    }).catch(err => console.log(err, "City not found, try again"));
+    setInput("");
   }
 
   const handleKeypress = (e) => {
@@ -44,7 +45,7 @@ function App() {
     if (e.keyCode === 13) {
       e.preventDefault();
       searchWeather();
-      console.log('trying')
+      setInput("")
     }
   };
   // here we say, if the weather is present then show it otherwise not, to prevent errors
@@ -89,10 +90,35 @@ const WeatherContainer = styled.div`
   margin: 2.5rem;
   padding: 2.5rem;
   border-radius: 20px;
-  background-color:rgba(239, 255, 255, 0.5);
+  background-color: rgba(239, 255, 255, 0.5);
+  input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(239, 255, 255, 0.5);
+    margin-right: 10px;
+  }
+  Input:focus-visible {
+    outline: none;
+  }
+  button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 20px;
+    background: #56b6d4;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(239, 255, 255, 0.5);
+    cursor: pointer;
+    :hover {
+      color: white;
+      background: #fdb30a;
+    }
+  }
   @media (max-width: 518px) {
     padding: 1.5rem;
     margin: 1.5rem;
   }
 `;
+
+
 export default App;
