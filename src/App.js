@@ -16,13 +16,18 @@ function App() {
 
   // use effect when page load display data
   useEffect(() => {
-    const location = axios.get(
-      'http://api.weatherapi.com/v1/current.json?key=fb454c4007ae4b63b83154929212704&q=copenhagen&aqi=no'
-    ).then((data) => {
-        console.log(data.data)
+    const location = axios
+      .get(
+        `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=copenhagen&aqi=no`
+      )
+      .then((data) => {
+        console.log(data.data);
         // data saved into a react state
-        setWeather(data.data)
-    }).catch(err => console.log(err, "Sorry something went wrong, try later"));
+        setWeather(data.data);
+      })
+      .catch((err) =>
+        console.log(err, "Sorry something went wrong, try later")
+      );
   },[])
 
   // event
