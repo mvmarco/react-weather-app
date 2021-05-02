@@ -16,8 +16,7 @@ function App() {
 
   // use effect when page load display data
   useEffect(() => {
-    const location = axios
-      .get(
+    axios.get(
         `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=copenhagen&aqi=no`
       )
       .then((data) => {
