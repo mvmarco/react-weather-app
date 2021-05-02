@@ -85,6 +85,10 @@ const AppStyle = styled.div`
   text-align: center;
   background-image: url(${img});
   background-size: 100% 100%;
+  @media (max-width: 518px) {
+    background-size: 700px 700px;
+  }
+  object-fit: cover;
 `;
 const WeatherContainer = styled.div`
   margin: 2.5rem;
