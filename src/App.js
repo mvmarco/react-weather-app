@@ -46,7 +46,7 @@ function App() {
 
   const handleKeypress = (e) => {
     //it triggers by pressing the enter key
-    if (e.keyCode === 13) {
+    if (e.code === 'Enter') {
       e.preventDefault();
       searchWeather();
       setInput("")
